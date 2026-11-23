@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Capacitor } from '@capacitor/core';
 import { AttendanceProvider } from './contexts/AttendanceContext';
@@ -10,14 +11,17 @@ import { CalendarView } from './pages/CalendarView';
 import { LandingPage } from './pages/LandingPage';
 import { Analytics } from './pages/Analytics';
 import { SettingsPage } from './pages/SettingsPage';
+import { SplashScreen } from './components/SplashScreen';
 
 export function App() {
-  // The installed Android app should open straight into the dashboard, not the
-  // marketing page (whose APK download link only exists on the web).
   const isNative = Capacitor.isNativePlatform();
+  const [showSplash, setShowSplash] = useState(true);
 
   return (
     <AttendanceProvider>
+      {showSplash && (
+        <SplashScreen onFinish={() => setShowSplash(false)} minDurationMs={2000} />
+      )}
       <BrowserRouter>
         <Layout>
           <Routes>
