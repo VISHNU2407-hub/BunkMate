@@ -113,7 +113,7 @@ export const LandingPage: React.FC = () => {
                   className="h-12 px-5 rounded-xl bg-white/10 border border-white/25 text-white text-xs font-bold hover:bg-white/15 transition flex items-center justify-center gap-2 backdrop-blur-sm"
                 >
                   <Smartphone className="w-4 h-4" />
-                  <span>Get Android APK (4.7 MB)</span>
+                  <span>Get Android APK</span>
                 </button>
               </div>
 
