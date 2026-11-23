@@ -11,16 +11,18 @@ import { CalendarView } from './pages/CalendarView';
 import { LandingPage } from './pages/LandingPage';
 import { Analytics } from './pages/Analytics';
 import { SettingsPage } from './pages/SettingsPage';
-import { SplashScreen } from './components/SplashScreen';
+import { BrandIntro } from './components/BrandIntro';
 
 export function App() {
   const isNative = Capacitor.isNativePlatform();
-  const [showSplash, setShowSplash] = useState(true);
+
+  // Show the launch animation ONLY when running inside the native APK
+  const [showAppAnimation, setShowAppAnimation] = useState(() => isNative);
 
   return (
     <AttendanceProvider>
-      {showSplash && (
-        <SplashScreen onFinish={() => setShowSplash(false)} minDurationMs={2000} />
+      {showAppAnimation && (
+        <BrandIntro onFinish={() => setShowAppAnimation(false)} durationMs={1500} />
       )}
       <BrowserRouter>
         <Layout>
