@@ -7,9 +7,9 @@ export const INITIAL_STATE: AppState = {
   version: CURRENT_STATE_VERSION,
   isConfigured: false,
   settings: {
-    studentName: 'Student',
-    collegeName: 'College / University',
-    semester: 'Current Semester',
+    studentName: '',
+    collegeName: '',
+    semester: '',
     academicYear: '2026-2027',
     defaultTargetPercent: 75,
     defaultFloorPercent: 60,

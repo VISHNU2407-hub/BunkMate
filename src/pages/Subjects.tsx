@@ -159,17 +159,17 @@ export const Subjects: React.FC = () => {
       </div>
 
       {state.subjects.length === 0 ? (
-        <div className="surface py-14 px-6 text-center max-w-lg mx-auto">
+        <div className="surface py-14 px-6 text-center w-full">
           <div className="flex justify-center mb-4">
             <BunkMateMascot size="lg" variant="bounce" />
           </div>
           <h2 className="text-lg font-extrabold text-[#171642]">No subjects registered yet</h2>
-          <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto leading-relaxed">
+          <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto leading-relaxed">
             Add each theory and lab course you're enrolled in. BunkMate will track your hours, safe bunks, and alert you before you breach the floor threshold.
           </p>
           <button
             onClick={openCreateModal}
-            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7047FF] hover:bg-[#5f38e6] text-white text-xs font-bold shadow-md shadow-[#7047FF]/25 transition"
+            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7047FF] hover:bg-[#5f38e6] text-white text-xs font-bold shadow-md shadow-[#7047FF]/25 transition tap-bounce"
           >
             <Plus className="w-4 h-4" /> Add your first subject
           </button>

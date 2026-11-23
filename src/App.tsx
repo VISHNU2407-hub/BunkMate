@@ -22,7 +22,7 @@ export function App() {
   return (
     <AttendanceProvider>
       {showAppAnimation && (
-        <BrandIntro onFinish={() => setShowAppAnimation(false)} durationMs={1500} />
+        <BrandIntro onFinish={() => setShowAppAnimation(false)} durationMs={3500} />
       )}
       <BrowserRouter>
         <Layout>

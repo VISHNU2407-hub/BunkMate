@@ -160,9 +160,10 @@ export const SettingsPage: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="e.g. Alex Hunter"
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
 
@@ -172,9 +173,10 @@ export const SettingsPage: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="e.g. Stanford University / MIT"
                   value={collegeName}
                   onChange={(e) => setCollegeName(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
             </div>
@@ -186,9 +188,10 @@ export const SettingsPage: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="e.g. Semester 5"
                   value={semester}
                   onChange={(e) => setSemester(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
 
@@ -198,9 +201,10 @@ export const SettingsPage: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="e.g. 2026-2027"
                   value={academicYear}
                   onChange={(e) => setAcademicYear(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
             </div>

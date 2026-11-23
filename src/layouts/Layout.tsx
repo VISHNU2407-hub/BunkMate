@@ -128,13 +128,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 >
                   <BunkMateMascot size="sm" variant="float" />
                   <span className="min-w-0">
-                    <span className="flex items-center gap-1.5">
-                      <span className="font-extrabold text-base tracking-tight text-[#171642]">BunkMate</span>
-                      <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded-md bg-[#E9E3FF] text-[#7047FF] border border-[#7047FF]/20">
-                        Pro
-                      </span>
+                    <span className="font-extrabold text-base tracking-tight text-[#171642] block">
+                      BunkMate
                     </span>
-                    <span className="block text-[10px] text-slate-400 font-semibold truncate">
+                    <span className="block text-[10px] text-slate-400 font-semibold truncate -mt-0.5">
                       Your Attendance. Your Control.
                     </span>
                   </span>

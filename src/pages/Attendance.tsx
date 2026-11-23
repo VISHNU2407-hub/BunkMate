@@ -227,26 +227,26 @@ export const Attendance: React.FC = () => {
 
       <div className="space-y-3">
         {dayName === 'Sunday' && filteredItems.length === 0 ? (
-          <div className="text-center py-14 px-4 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 max-w-md mx-auto">
+          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 w-full">
             <div className="flex justify-center mb-3">
               <BunkMateMascot size="md" variant="still" />
             </div>
             <h3 className="text-base font-extrabold text-[#171642] dark:text-slate-200">
               Sunday — Enjoy Your Rest! ☀️
             </h3>
-            <p className="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
+            <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
               No regular lectures scheduled. You can still tap "+ Extra Class" above if a special session was held.
             </p>
           </div>
         ) : filteredItems.length === 0 ? (
-          <div className="text-center py-14 px-4 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 max-w-md mx-auto">
+          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 w-full">
             <div className="flex justify-center mb-3">
               <BunkMateMascot size="md" variant="still" />
             </div>
             <h3 className="text-base font-extrabold text-[#171642] dark:text-slate-200">
               No Classes Scheduled for {dayName}
             </h3>
-            <p className="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
+            <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
               Free day on your schedule. Tap "+ Extra Class" to record compensatory sessions anytime.
             </p>
           </div>

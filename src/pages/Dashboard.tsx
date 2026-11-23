@@ -46,27 +46,27 @@ export const Dashboard: React.FC = () => {
 
   if (state.subjects.length === 0) {
     return (
-      <div className="max-w-xl mx-auto py-12 px-4 text-center">
+      <div className="w-full py-14 px-6 text-center surface border border-slate-200/80 rounded-3xl">
         <div className="flex justify-center mb-5">
           <BunkMateMascot size="xl" variant="bounce" />
         </div>
-        <h2 className="text-2xl font-black text-[#171642] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-black text-[#171642] tracking-tight">
           Welcome to BunkMate! 👋
         </h2>
-        <p className="text-sm text-slate-500 mt-2 max-w-md mx-auto leading-relaxed">
+        <p className="text-sm text-slate-500 mt-2 max-w-lg mx-auto leading-relaxed">
           Your attendance companion is ready to help you stay ahead. Add your subjects and weekly timetable to start tracking safe bunks and avoid detention.
         </p>
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/subjects"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#7047FF] hover:bg-[#5f38e6] text-white font-bold text-xs shadow-md shadow-[#7047FF]/25 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#7047FF] hover:bg-[#5f38e6] text-white font-bold text-xs shadow-md shadow-[#7047FF]/25 transition tap-bounce"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Add Subjects &amp; Courses</span>
           </Link>
           <Link
             to="/timetable"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-200 font-bold text-xs hover:bg-[#E9E3FF]/30 text-[#171642] transition"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-200 font-bold text-xs hover:bg-[#E9E3FF]/30 text-[#171642] transition tap-bounce"
           >
             <span>Set Up Timetable</span>
           </Link>
@@ -109,7 +109,17 @@ export const Dashboard: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
-              Your attendance journey continues, <span className="font-semibold text-slate-700 dark:text-slate-300">{state.settings.studentName}</span> &bull; {state.settings.semester} ({state.settings.collegeName})
+              Your attendance journey continues
+              {state.settings.studentName ? (
+                <>
+                  {', '}
+                  <span className="font-semibold text-slate-700 dark:text-slate-300">
+                    {state.settings.studentName}
+                  </span>
+                </>
+              ) : null}
+              {state.settings.semester ? ` • ${state.settings.semester}` : ''}
+              {state.settings.collegeName ? ` (${state.settings.collegeName})` : ''}
             </p>
           </div>
         </div>
