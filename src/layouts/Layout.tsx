@@ -261,17 +261,19 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </span>
               </button>
 
-              <button
-                onClick={() => navigate('/analytics')}
-                className={cn(
-                  'flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-extrabold tabular',
-                  statusTone
-                )}
-                aria-label="View attendance analytics"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                {overallStats.totalConducted > 0 ? `${percentage}%` : 'New'}
-              </button>
+              {overallStats.totalConducted > 0 && (
+                <button
+                  onClick={() => navigate('/analytics')}
+                  className={cn(
+                    'flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-extrabold tabular',
+                    statusTone
+                  )}
+                  aria-label="View attendance analytics"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                  {`${percentage}%`}
+                </button>
+              )}
             </div>
           </header>
 
