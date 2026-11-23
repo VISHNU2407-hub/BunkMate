@@ -227,11 +227,11 @@ export const Attendance: React.FC = () => {
 
       <div className="space-y-3">
         {dayName === 'Sunday' && filteredItems.length === 0 ? (
-          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 w-full">
+          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 rounded-3xl bg-white w-full">
             <div className="flex justify-center mb-3">
               <BunkMateMascot size="md" variant="still" />
             </div>
-            <h3 className="text-base font-extrabold text-[#171642] dark:text-slate-200">
+            <h3 className="text-base font-extrabold text-[#171642]">
               Sunday — Enjoy Your Rest! ☀️
             </h3>
             <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
@@ -239,11 +239,11 @@ export const Attendance: React.FC = () => {
             </p>
           </div>
         ) : filteredItems.length === 0 ? (
-          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 w-full">
+          <div className="text-center py-14 px-6 border-2 border-dashed border-slate-200 rounded-3xl bg-white w-full">
             <div className="flex justify-center mb-3">
               <BunkMateMascot size="md" variant="still" />
             </div>
-            <h3 className="text-base font-extrabold text-[#171642] dark:text-slate-200">
+            <h3 className="text-base font-extrabold text-[#171642]">
               No Classes Scheduled for {dayName}
             </h3>
             <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
@@ -259,7 +259,7 @@ export const Attendance: React.FC = () => {
             return (
               <div
                 key={slot.slotId}
-                className="p-4 sm:p-5 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition hover:shadow"
+                className="p-4 sm:p-5 rounded-3xl border border-slate-200/80 bg-white shadow-sm transition hover:shadow"
               >
                 <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
                   <div className="flex items-start gap-3 min-w-0">
@@ -269,9 +269,9 @@ export const Attendance: React.FC = () => {
 
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="text-sm font-bold text-slate-900">
                           {slot.isExtra && (
-                            <span className="text-indigo-600 dark:text-indigo-400 font-bold text-xs mr-1">
+                            <span className="text-indigo-600 font-bold text-xs mr-1">
                               [Extra Lecture]
                             </span>
                           )}
@@ -280,8 +280,8 @@ export const Attendance: React.FC = () => {
                         <span
                           className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                             (actualSub?.type || scheduledSub?.type) === 'Lab'
-                              ? 'bg-purple-100 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300'
-                              : 'bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
+                              ? 'bg-purple-100 text-purple-700'
+                              : 'bg-blue-100 text-blue-700'
                           }`}
                         >
                           {actualSub?.type || scheduledSub?.type || 'Theory'}
@@ -289,13 +289,13 @@ export const Attendance: React.FC = () => {
                       </div>
 
                       {isSwapped ? (
-                        <p className="text-xs text-amber-600 dark:text-amber-400 mt-1 font-semibold flex items-center gap-1">
+                        <p className="text-xs text-amber-600 mt-1 font-semibold flex items-center gap-1">
                           <Repeat className="w-3.5 h-3.5" />
                           Swapped: Scheduled <em>{scheduledSub?.name}</em> cancelled (0/0), conducted{' '}
                           <em>{actualSub?.name}</em>.
                         </p>
                       ) : (
-                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
+                        <p className="text-xs text-slate-500 mt-0.5 font-medium">
                           {slot.isExtra ? 'Unscheduled lecture' : 'Timetable Regular Period'}
                         </p>
                       )}
@@ -308,7 +308,7 @@ export const Attendance: React.FC = () => {
                       className={`px-2.5 py-2 rounded-xl text-[11px] font-bold transition-all tap-bounce flex items-center justify-center gap-1 ${
                         slot.status === 'present'
                           ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/30 scale-[1.02]'
-                          : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:border-emerald-300'
+                          : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-emerald-50:bg-emerald-950/40 hover:border-emerald-300'
                       }`}
                     >
                       <Check className="w-3.5 h-3.5" />
@@ -320,7 +320,7 @@ export const Attendance: React.FC = () => {
                       className={`px-2.5 py-2 rounded-xl text-[11px] font-bold transition-all tap-bounce flex items-center justify-center gap-1 ${
                         slot.status === 'absent'
                           ? 'bg-red-600 text-white shadow-sm ring-2 ring-red-500/30 scale-[1.02]'
-                          : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-red-50 dark:hover:bg-red-950/40 hover:border-red-300'
+                          : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-red-50:bg-red-950/40 hover:border-red-300'
                       }`}
                     >
                       <X className="w-3.5 h-3.5" />
@@ -331,8 +331,8 @@ export const Attendance: React.FC = () => {
                       onClick={() => setSlotAttendance(selectedDate, slot.slotId, 'cancelled')}
                       className={`px-2.5 py-2 rounded-xl text-[11px] font-bold transition-all tap-bounce flex items-center justify-center gap-1 ${
                         slot.status === 'cancelled'
-                          ? 'bg-slate-700 dark:bg-slate-600 text-white shadow-sm scale-[1.02]'
-                          : 'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                          ? 'bg-slate-700 text-white shadow-sm scale-[1.02]'
+                          : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100:bg-slate-700'
                       }`}
                     >
                       <Ban className="w-3.5 h-3.5" />
@@ -360,7 +360,7 @@ export const Attendance: React.FC = () => {
                         className={`px-2.5 py-2 rounded-xl text-[11px] font-bold transition-all tap-bounce flex items-center justify-center gap-1 ${
                           slot.status === 'swapped'
                             ? 'bg-amber-600 text-white shadow-sm ring-2 ring-amber-500/30 scale-[1.02]'
-                            : 'bg-slate-50 dark:bg-slate-800 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-900/50 hover:bg-amber-50 dark:hover:bg-amber-950/40'
+                            : 'bg-slate-50 text-amber-700 border border-amber-300 hover:bg-amber-50:bg-amber-950/40'
                         }`}
                       >
                         <Repeat className="w-3.5 h-3.5" />
@@ -384,7 +384,7 @@ export const Attendance: React.FC = () => {
                     <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex items-center gap-2">
                         <HelpCircle className="w-4 h-4 text-amber-600" />
-                        <span className="text-xs font-bold text-amber-900 dark:text-amber-200">
+                        <span className="text-xs font-bold text-amber-900">
                           Which subject was actually taught?
                         </span>
                         <select
@@ -398,7 +398,7 @@ export const Attendance: React.FC = () => {
                               slot.swappedActualStatus
                             )
                           }
-                          className="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-2.5 py-1 text-xs font-bold focus:outline-none"
+                          className="bg-white border border-slate-300 rounded-xl px-2.5 py-1 text-xs font-bold focus:outline-none"
                         >
                           {state.subjects.map((s) => (
                             <option key={s.id} value={s.id}>
@@ -409,7 +409,7 @@ export const Attendance: React.FC = () => {
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                        <span className="text-xs font-semibold text-slate-600">
                           Your Attendance:
                         </span>
                         <button
@@ -426,7 +426,7 @@ export const Attendance: React.FC = () => {
                           className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
                             slot.swappedActualStatus === 'present'
                               ? 'bg-emerald-600 text-white'
-                              : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                              : 'bg-white border border-slate-300 text-slate-700'
                           }`}
                         >
                           Present (+1/+1)
@@ -445,7 +445,7 @@ export const Attendance: React.FC = () => {
                           className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
                             slot.swappedActualStatus === 'absent'
                               ? 'bg-red-600 text-white'
-                              : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                              : 'bg-white border border-slate-300 text-slate-700'
                           }`}
                         >
                           Absent (+0/+1)
@@ -462,21 +462,21 @@ export const Attendance: React.FC = () => {
 
       {isExtraModalOpen && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-7 w-full max-w-md shadow-2xl">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 w-full max-w-md shadow-2xl">
+            <h3 className="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
               <PlusCircle className="w-5 h-5 text-indigo-600" />
               <span>Log Extra / Compensatory Class</span>
             </h3>
 
             <form onSubmit={handleExtraSubmit} className="space-y-4 text-xs">
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Subject
                 </label>
                 <select
                   value={extraSubjectId}
                   onChange={(e) => setExtraSubjectId(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none"
                 >
                   {state.subjects.map((s) => (
                     <option key={s.id} value={s.id}>
@@ -487,7 +487,7 @@ export const Attendance: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Time Label
                 </label>
                 <input
@@ -495,12 +495,12 @@ export const Attendance: React.FC = () => {
                   value={extraTimeLabel}
                   onChange={(e) => setExtraTimeLabel(e.target.value)}
                   placeholder="e.g. 04:00 - 05:00"
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Status
                 </label>
                 <div className="grid grid-cols-2 gap-2">
@@ -509,8 +509,8 @@ export const Attendance: React.FC = () => {
                     onClick={() => setExtraStatus('present')}
                     className={`py-2 rounded-xl text-xs font-bold border transition ${
                       extraStatus === 'present'
-                        ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300'
-                        : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                        : 'border-slate-200 text-slate-600'
                     }`}
                   >
                     Present (+1/+1)
@@ -520,8 +520,8 @@ export const Attendance: React.FC = () => {
                     onClick={() => setExtraStatus('absent')}
                     className={`py-2 rounded-xl text-xs font-bold border transition ${
                       extraStatus === 'absent'
-                        ? 'border-red-500 bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300'
-                        : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+                        ? 'border-red-500 bg-red-50 text-red-700'
+                        : 'border-slate-200 text-slate-600'
                     }`}
                   >
                     Absent (+0/+1)
@@ -529,11 +529,11 @@ export const Attendance: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-2">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => setIsExtraModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 font-bold"
+                  className="px-4 py-2 rounded-xl border border-slate-200 font-bold"
                 >
                   Cancel
                 </button>

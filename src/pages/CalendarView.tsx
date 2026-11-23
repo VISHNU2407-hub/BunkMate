@@ -99,12 +99,12 @@ export const CalendarView: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200/60 dark:border-slate-800/60 gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200/60 gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Academic Calendar
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
+          <p className="text-xs text-slate-500 mt-1 font-medium">
             Monthly attendance map with unlogged day resolution and daily details.
           </p>
         </div>
@@ -131,16 +131,16 @@ export const CalendarView: React.FC = () => {
       </div>
 
       {unloggedPastDays.length > 0 && (
-        <div className="p-4 rounded-3xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/80 dark:bg-amber-950/30 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div className="p-4 rounded-3xl border border-amber-200 bg-amber-50/80 flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/60 text-amber-700 dark:text-amber-300 flex items-center justify-center flex-shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0">
               <AlertCircle className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs font-bold text-amber-900 dark:text-amber-200">
+              <div className="text-xs font-bold text-amber-900">
                 {unloggedPastDays.length} Unlogged Past Days
               </div>
-              <p className="text-[11px] text-amber-700 dark:text-amber-400 font-medium">
+              <p className="text-[11px] text-amber-700 font-medium">
                 Click any highlighted date to mark or review periods individually.
               </p>
             </div>
@@ -148,7 +148,7 @@ export const CalendarView: React.FC = () => {
         </div>
       )}
 
-      <div className="rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-6 shadow-sm">
+      <div className="rounded-3xl border border-slate-200/80 bg-white p-4 sm:p-6 shadow-sm">
         <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2 text-center text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
           <div>Sun</div>
           <div>Mon</div>
@@ -174,12 +174,12 @@ export const CalendarView: React.FC = () => {
                 onClick={() => setSelectedDayDetail(d.dateStr)}
                 className={`h-16 sm:h-24 p-1.5 sm:p-2 rounded-xl sm:rounded-2xl border transition flex flex-col justify-between cursor-pointer group ${
                   isSelected
-                    ? 'border-indigo-600 bg-indigo-50/60 dark:bg-indigo-950/40'
+                    ? 'border-indigo-600 bg-indigo-50/60'
                     : d.isUnloggedPast
-                    ? 'border-amber-300 dark:border-amber-800/80 bg-amber-50/40 dark:bg-amber-950/20'
+                    ? 'border-amber-300 bg-amber-50/40'
                     : isToday
-                    ? 'border-indigo-400 bg-indigo-50/30 dark:bg-slate-800'
-                    : 'border-slate-100 dark:border-slate-800/70 hover:bg-slate-50 dark:hover:bg-slate-800/40'
+                    ? 'border-indigo-400 bg-indigo-50/30'
+                    : 'border-slate-100 hover:bg-slate-50:bg-slate-800/40'
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -189,7 +189,7 @@ export const CalendarView: React.FC = () => {
                         ? 'w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center font-extrabold'
                         : d.isSunday
                         ? 'text-slate-400'
-                        : 'text-slate-700 dark:text-slate-300'
+                        : 'text-slate-700'
                     }`}
                   >
                     {d.dayNumber}
@@ -202,13 +202,13 @@ export const CalendarView: React.FC = () => {
 
                 <div className="space-y-0.5">
                   {d.isUnloggedPast ? (
-                    <span className="text-[9px] font-bold text-amber-600 dark:text-amber-400 block truncate">
+                    <span className="text-[9px] font-bold text-amber-600 block truncate">
                       Unlogged ({d.scheduledCount})
                     </span>
                   ) : d.hasLogs ? (
                     <div className="flex items-center gap-1 text-[10px] font-bold flex-wrap">
                       {d.presentCount > 0 && (
-                        <span className="text-emerald-600 dark:text-emerald-400">
+                        <span className="text-emerald-600">
                           +{d.presentCount}
                         </span>
                       )}
@@ -222,7 +222,7 @@ export const CalendarView: React.FC = () => {
                   ) : d.isSunday ? (
                     <span className="text-[9px] font-medium text-slate-400 block">Off</span>
                   ) : (
-                    <span className="text-[9px] text-slate-300 dark:text-slate-600 font-medium block">
+                    <span className="text-[9px] text-slate-300 font-medium block">
                       {d.scheduledCount > 0 ? `${d.scheduledCount} slots` : 'Free'}
                     </span>
                   )}
@@ -234,7 +234,7 @@ export const CalendarView: React.FC = () => {
       </div>
 
       {selectedDayDetail && (
-        <div className="p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
+        <div className="p-6 rounded-3xl border border-slate-200/80 bg-white shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
             <div>
               <h3 className="text-base font-bold text-slate-900">
@@ -248,13 +248,13 @@ export const CalendarView: React.FC = () => {
             <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={() => markDayBulk(selectedDayDetail, 'present')}
-                className="px-3 py-1.5 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold transition"
+                className="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold transition"
               >
                 Mark All Present
               </button>
               <button
                 onClick={() => markDayBulk(selectedDayDetail, 'cancelled')}
-                className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold transition"
+                className="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold transition"
               >
                 Mark Holiday
               </button>
@@ -281,10 +281,10 @@ export const CalendarView: React.FC = () => {
                 return (
                   <div
                     key={log.slotId}
-                    className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between text-xs"
+                    className="p-3 rounded-2xl bg-slate-50 border border-slate-200/60 flex items-center justify-between text-xs"
                   >
                     <div>
-                      <div className="font-bold text-slate-900 dark:text-white">
+                      <div className="font-bold text-slate-900">
                         {sub?.name || 'Class'}
                       </div>
                       <div className="text-[10px] text-slate-400 font-semibold mt-0.5">
@@ -294,10 +294,10 @@ export const CalendarView: React.FC = () => {
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-lg ${
                         log.status === 'present'
-                          ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300'
+                          ? 'bg-emerald-100 text-emerald-700'
                           : log.status === 'absent'
-                          ? 'bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300'
-                          : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300'
+                          ? 'bg-red-100 text-red-700'
+                          : 'bg-slate-200 text-slate-700'
                       }`}
                     >
                       {log.status.toUpperCase()}

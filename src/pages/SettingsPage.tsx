@@ -120,20 +120,20 @@ export const SettingsPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="pb-4 border-b border-slate-200/60 dark:border-slate-800/60">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
+      <div className="pb-4 border-b border-slate-200/60">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2.5">
           <SettingsIcon className="w-7 h-7 text-indigo-600" />
           <span>System Settings & Preferences</span>
         </h1>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
+        <p className="text-xs text-slate-500 mt-1 font-medium">
           Personalize student profile, set attendance thresholds, and manage data backups.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm lg:col-span-2 space-y-5">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-            <h2 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+        <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm lg:col-span-2 space-y-5">
+          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <User className="w-4 h-4 text-indigo-600" />
               <span>Student Profile & Academic Rules</span>
             </h2>
@@ -155,7 +155,7 @@ export const SettingsPage: React.FC = () => {
           <form onSubmit={handleSaveProfile} className="space-y-4 text-xs">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Student Name
                 </label>
                 <input
@@ -163,12 +163,12 @@ export const SettingsPage: React.FC = () => {
                   placeholder="e.g. Alex Hunter"
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   College / Institute Name
                 </label>
                 <input
@@ -176,14 +176,14 @@ export const SettingsPage: React.FC = () => {
                   placeholder="e.g. Stanford University / MIT"
                   value={collegeName}
                   onChange={(e) => setCollegeName(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Current Semester
                 </label>
                 <input
@@ -191,12 +191,12 @@ export const SettingsPage: React.FC = () => {
                   placeholder="e.g. Semester 5"
                   value={semester}
                   onChange={(e) => setSemester(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block font-bold text-slate-700 mb-1">
                   Academic Year
                 </label>
                 <input
@@ -204,14 +204,14 @@ export const SettingsPage: React.FC = () => {
                   placeholder="e.g. 2026-2027"
                   value={academicYear}
                   onChange={(e) => setAcademicYear(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-[#7047FF] placeholder:text-slate-400 placeholder:font-normal"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60">
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+                <label className="block font-bold text-slate-700 mb-1">
                   Default Target Percentage (%)
                 </label>
                 <input
@@ -220,13 +220,13 @@ export const SettingsPage: React.FC = () => {
                   max="100"
                   value={defaultTargetPercent}
                   onChange={(e) => setDefaultTargetPercent(Number(e.target.value))}
-                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 />
                 <p className="text-[10px] text-slate-400 mt-1">Standard college hall ticket target (e.g. 75%)</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60">
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/60">
+                <label className="block font-bold text-slate-700 mb-1">
                   Safety Floor Minimum (%)
                 </label>
                 <input
@@ -235,7 +235,7 @@ export const SettingsPage: React.FC = () => {
                   max="100"
                   value={defaultFloorPercent}
                   onChange={(e) => setDefaultFloorPercent(Number(e.target.value))}
-                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 />
                 <p className="text-[10px] text-slate-400 mt-1">Triggers detention warning if breached (e.g. 60%)</p>
               </div>
@@ -253,18 +253,18 @@ export const SettingsPage: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4">
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white pb-2 border-b border-slate-100 dark:border-slate-800">
+          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
+            <h3 className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
               Backup & Restore (JSON)
             </h3>
 
             {importStatus && (
-              <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-xs font-semibold">
+              <div className="p-3 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold">
                 {importStatus}
               </div>
             )}
 
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-500 leading-relaxed">
               Export your attendance records, timetable, and subjects as a portable JSON file to
               safeguard your data or switch devices.
             </p>
@@ -272,13 +272,13 @@ export const SettingsPage: React.FC = () => {
             <div className="space-y-2 pt-1">
               <button
                 onClick={handleExport}
-                className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition"
+                className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200:bg-slate-700 text-slate-700 text-xs font-bold transition"
               >
                 <Download className="w-4 h-4 text-indigo-600" />
                 <span>Export JSON Backup</span>
               </button>
 
-              <label className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition cursor-pointer">
+              <label className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200:bg-slate-700 text-slate-700 text-xs font-bold transition cursor-pointer">
                 <Upload className="w-4 h-4 text-indigo-600" />
                 <span>Import Backup File</span>
                 <input
